@@ -1,7 +1,7 @@
 import 'dart:convert';
 import 'package:cartgeek_aasignment/models/package_model.dart';
 import 'package:http/http.dart' as http;
-import 'models/current_booking_model.dart';
+import '../models/current_booking_model.dart';
 
 Future<List<Package>> fetchPackages() async {
   final response = await http.get(

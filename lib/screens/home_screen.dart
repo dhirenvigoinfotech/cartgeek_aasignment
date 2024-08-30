@@ -1,7 +1,7 @@
-import 'package:cartgeek_aasignment/api_service.dart';
+import 'package:cartgeek_aasignment/api/api_service.dart';
 import 'package:flutter/material.dart';
-import 'models/current_booking_model.dart';
-import 'models/package_model.dart';
+import '../models/current_booking_model.dart';
+import '../models/package_model.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -521,7 +521,9 @@ class _HomeScreenState extends State<HomeScreen> {
                       icon: const Icon(Icons.star_border_purple500_outlined)),
                   _buildActionButton("Geolocation",
                       icon: const Icon(Icons.location_on_sharp)),
-                  _buildActionButtonImage("Surveillance", image: const AssetImage('assets/survillence.png'),
+                  _buildActionButtonImage(
+                    "Surveillance",
+                    image: const AssetImage('assets/survillence.png'),
                   ),
                 ],
               ),
@@ -599,7 +601,6 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
     );
   }
-
 
   Widget _buildPackagesSection() {
     return FutureBuilder<List<Package>>(
