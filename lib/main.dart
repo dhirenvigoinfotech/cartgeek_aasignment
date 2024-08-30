@@ -21,7 +21,7 @@ class MyApp extends StatelessWidget {
           buttonColor: Colors.pink, // Button background color
         ),
       ),
-      home: ,
+      home: HomeScreen(),
     );
   }
 }
