@@ -521,8 +521,8 @@ class _HomeScreenState extends State<HomeScreen> {
                       icon: const Icon(Icons.star_border_purple500_outlined)),
                   _buildActionButton("Geolocation",
                       icon: const Icon(Icons.location_on_sharp)),
-                  _buildActionButton("Surveillance",
-                      icon: const Icon(Icons.alarm)),
+                  _buildActionButtonImage("Surveillance", image: const AssetImage('assets/survillence.png'),
+                  ),
                 ],
               ),
             ],
@@ -564,6 +564,42 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
     );
   }
+
+  Widget _buildActionButtonImage(String text, {ImageProvider? image}) {
+    return OutlinedButton(
+      onPressed: () {},
+      style: OutlinedButton.styleFrom(
+        alignment: Alignment.center,
+        backgroundColor: const Color(0xFF262F71),
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(20.0),
+        ),
+        padding: const EdgeInsets.symmetric(vertical: 0, horizontal: 10),
+        minimumSize: const Size(0, 25),
+      ),
+      child: Row(
+        children: [
+          if (image != null) ...[
+            Image(
+              image: image,
+              width: 24, // Adjust size as needed
+              height: 24, // Adjust size as needed
+              color: Colors.white, // Apply color filter if needed
+            ),
+            const SizedBox(width: 8.0),
+          ],
+          Text(
+            text,
+            style: const TextStyle(
+              fontSize: 10,
+              color: Colors.white,
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
 
   Widget _buildPackagesSection() {
     return FutureBuilder<List<Package>>(
