@@ -9,7 +9,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Nanny Services',
+      title: 'CartGeek Assignment',
       theme: ThemeData(
         primarySwatch: Colors.pink,
         textTheme: const TextTheme(
@@ -21,6 +21,7 @@ class MyApp extends StatelessWidget {
           buttonColor: Colors.pink, // Button background color
         ),
       ),
+      debugShowCheckedModeBanner: false,
       home: HomeScreen(),
     );
   }
